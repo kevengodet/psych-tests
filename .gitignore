@@ -1,0 +1,30 @@
+# Build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+build/
+.gradle/
+local.properties
+captures/
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Gradle wrapper (keep jar + properties, not wrapper dist)
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Logs
+*.log
