@@ -15,7 +15,7 @@ android {
         minSdk = 26
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = "${libs.versions.appVersionMajor.get()}.${libs.versions.appVersionMinor.get()}.${libs.versions.appVersionPatch.get()}"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,6 +45,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packagingOptions {
@@ -113,4 +114,12 @@ dependencies {
 
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
+}
+
+tasks.register("printAppVersion") {
+    doLast {
+        println("Major: ${libs.versions.appVersionMajor.get()}")
+        println("Minor: ${libs.versions.appVersionMinor.get()}")
+        println("Patch: ${libs.versions.appVersionPatch.get()}")
+    }
 }

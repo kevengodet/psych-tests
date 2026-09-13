@@ -15,6 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.psychtests.R
+import com.psychtests.BuildConfig
 import com.psychtests.data.model.Test
 import com.psychtests.data.model.TestCategory
 import com.psychtests.viewmodel.HomeViewModel
@@ -58,6 +59,11 @@ fun HomeScreen(
                     text = stringResource(R.string.home_welcome),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = stringResource(R.string.app_version, BuildConfig.VERSION_NAME),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
                 )
             }
             IconButton(onClick = onHistoryClick) {
